@@ -17,12 +17,19 @@ namespace Serveur
 
         public Message[] receiveMsg()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("*************************");
+            Console.WriteLine("recuperation des messages");
+            Console.WriteLine("*************************");
+            return msgList.ToArray(typeof(Message))as Message[];
         }
 
         public void sendMsg(Message msg)
         {
-            throw new NotImplementedException();
+            msgList.Add(msg);
+            Console.WriteLine("*************************");
+            Console.WriteLine("from : " + msg.from);
+            Console.WriteLine("msg : " + msg.content);
+            Console.WriteLine("*************************");
         }
     }
 }

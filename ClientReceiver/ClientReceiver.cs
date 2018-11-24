@@ -10,7 +10,6 @@ namespace ClientReceiver
 {
     class ClientReceiver
     {
-        private static int RECEIVER = 1;
         static void Main(string[] args)
         {
             try

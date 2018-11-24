@@ -18,14 +18,14 @@ namespace Serveur
                 ChannelServices.RegisterChannel(chnl, false);
                 RemotingConfiguration.RegisterWellKnownServiceType(typeof(MailBox),
                 "ObjMailBox", WellKnownObjectMode.Singleton);
-      
+
                 Console.WriteLine("Serveur démarré...");
-                Console.ReadLine();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Serveur:Erreur d'initialisation !" + ex.Message);
             }
+            Console.ReadLine();
         }
     }
 }

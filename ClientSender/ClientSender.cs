@@ -31,13 +31,17 @@ namespace ClientSender
                     msg.content = "message 1";
                     msg.from = "sender" + SENDER;
                     obj.sendMsg(msg);
-                    Console.ReadLine();
+                    Console.WriteLine("Client: message envoyé");
+
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("ERREUR :" + ex.Message);
+                Console.WriteLine("ERREUR :" + ex.Message); Console.ReadLine();
+
             }
+            Console.ReadLine();
+
         }
     }
 }
