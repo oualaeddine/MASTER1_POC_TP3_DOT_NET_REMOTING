@@ -19,6 +19,11 @@ namespace Serveur
                 RemotingConfiguration.RegisterWellKnownServiceType(typeof(MailBox),
                 "ObjMailBox", WellKnownObjectMode.Singleton);
 
+                /* pour lancer le serveur en mode SingleCall,
+                 * RemotingConfiguration.RegisterWellKnownServiceType(typeof(MailBox),
+                 * "ObjMailBox", WellKnownObjectMode.SingleCall);
+                */
+
                 Console.WriteLine("Serveur démarré...");
             }
             catch (Exception ex)
