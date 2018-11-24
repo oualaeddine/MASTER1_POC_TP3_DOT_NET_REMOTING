@@ -27,6 +27,7 @@ namespace Serveur
         {
             msgList.Add(msg);
             Console.WriteLine("*************************");
+            Console.WriteLine("envoie d'un message");
             Console.WriteLine("from : " + msg.from);
             Console.WriteLine("msg : " + msg.content);
             Console.WriteLine("*************************");
