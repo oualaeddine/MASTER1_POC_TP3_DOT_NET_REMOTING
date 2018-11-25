@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Serveur
 {
-    class Fabrique : IFabrique
+    class Fabrique : MarshalByRefObject, IFabrique
     {
         public IMailBox createMailBox()
         {

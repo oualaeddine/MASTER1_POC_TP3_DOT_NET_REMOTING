@@ -16,15 +16,21 @@ namespace Serveur
             {
                 TcpChannel chnl = new TcpChannel(1234);
                 ChannelServices.RegisterChannel(chnl, false);
-                RemotingConfiguration.RegisterWellKnownServiceType(typeof(MailBox),
-                "ObjMailBox", WellKnownObjectMode.Singleton);
 
-                /* pour lancer le serveur en mode SingleCall,
-                 * RemotingConfiguration.RegisterWellKnownServiceType(typeof(MailBox),
-                 * "ObjMailBox", WellKnownObjectMode.SingleCall);
-                */
+                //pour lancer le serveur en mode Singleton,
+                //  RemotingConfiguration.RegisterWellKnownServiceType(typeof(MailBox), "ObjMailBox", WellKnownObjectMode.Singleton);
+                // Console.WriteLine("Serveur démarré...");
 
-                Console.WriteLine("Serveur démarré...");
+                //pour lancer le serveur en mode SingleCall,
+            //    RemotingConfiguration.RegisterWellKnownServiceType(typeof(MailBox), "ObjMailBox", WellKnownObjectMode.SingleCall);
+              //  Console.WriteLine("Serveur démarré...");
+
+
+                //  pour lancer le serveur en mode avec fabrique,
+                 RemotingConfiguration.RegisterWellKnownServiceType(typeof(Fabrique), "ObjMailBox", WellKnownObjectMode.Singleton);
+                 Console.WriteLine("Serveur démarré...");
+
+
             }
             catch (Exception ex)
             {

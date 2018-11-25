@@ -19,18 +19,25 @@ namespace ClientSender
                 TcpChannel chl = new TcpChannel();
                 ChannelServices.RegisterChannel(chl, false);
                 Console.WriteLine("Client: Canal enregistré");
-                IMailBox obj = (IMailBox)Activator.GetObject(typeof(IMailBox),
-                "tcp://localhost:1234/ObjMailBox");
-                if (obj == null)
+
+              
+                  IFabrique obj = (IFabrique)Activator.GetObject(typeof(IFabrique),"tcp://localhost:1234/ObjMailBox");
+                  IMailBox obj1 = obj.createMailBox();
+
+              //  IMailBox obj1 = (IMailBox)Activator.GetObject(typeof(IMailBox), "tcp://localhost:1234/ObjMailBox");
+
+
+
+                if (obj1 == null)
                     Console.WriteLine("Problème de SERVEUR... ");
                 else
                 {
-                    Console.WriteLine("Reference acquise de l'objet Singleton");
+                    Console.WriteLine("Reference acquise de l'objet");
                     // Utilisation de l’objet : dépôt d’un message
-                   Message msg = new Message();
+                    Message msg = new Message();
                     msg.content = "message 1";
                     msg.from = "sender" + SENDER;
-                    obj.sendMsg(msg);
+                    obj1.sendMsg(msg);
                     Console.WriteLine("Client: message envoyé");
 
                 }
